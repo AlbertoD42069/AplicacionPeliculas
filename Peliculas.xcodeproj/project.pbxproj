@@ -13,6 +13,9 @@
 		1571F6832822D7F500C4C171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1571F6812822D7F500C4C171 /* Main.storyboard */; };
 		1571F6852822D80000C4C171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1571F6842822D80000C4C171 /* Assets.xcassets */; };
 		1571F6882822D80000C4C171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1571F6862822D80000C4C171 /* LaunchScreen.storyboard */; };
+		1571F69228232AAC00C4C171 /* PantallaPeliculasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571F69028232AAC00C4C171 /* PantallaPeliculasViewController.swift */; };
+		1571F69328232AAC00C4C171 /* PantallaPeliculasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1571F69128232AAC00C4C171 /* PantallaPeliculasViewController.xib */; };
+		1571F69528232ECD00C4C171 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1571F69428232ECD00C4C171 /* GoogleService-Info.plist */; };
 		52A25F80DBE868E94552C4AE /* Pods_Peliculas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB37CFFEC6CD5825129BF3F /* Pods_Peliculas.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		1571F6842822D80000C4C171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1571F6872822D80000C4C171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1571F6892822D80000C4C171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1571F69028232AAC00C4C171 /* PantallaPeliculasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallaPeliculasViewController.swift; sourceTree = "<group>"; };
+		1571F69128232AAC00C4C171 /* PantallaPeliculasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PantallaPeliculasViewController.xib; sourceTree = "<group>"; };
+		1571F69428232ECD00C4C171 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F918FA3E14505CA52B85A96 /* Pods-Peliculas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.debug.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.debug.xcconfig"; sourceTree = "<group>"; };
 		AE9B9D17AA873E0F33DAF107 /* Pods-Peliculas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.release.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.release.xcconfig"; sourceTree = "<group>"; };
 		DEB37CFFEC6CD5825129BF3F /* Pods_Peliculas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peliculas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +69,7 @@
 		1571F67A2822D7F500C4C171 /* Peliculas */ = {
 			isa = PBXGroup;
 			children = (
+				1571F68F28232A8700C4C171 /* PantallaPeliculas */,
 				1571F67B2822D7F500C4C171 /* AppDelegate.swift */,
 				1571F67D2822D7F500C4C171 /* SceneDelegate.swift */,
 				1571F67F2822D7F500C4C171 /* ViewController.swift */,
@@ -70,8 +77,18 @@
 				1571F6842822D80000C4C171 /* Assets.xcassets */,
 				1571F6862822D80000C4C171 /* LaunchScreen.storyboard */,
 				1571F6892822D80000C4C171 /* Info.plist */,
+				1571F69428232ECD00C4C171 /* GoogleService-Info.plist */,
 			);
 			path = Peliculas;
+			sourceTree = "<group>";
+		};
+		1571F68F28232A8700C4C171 /* PantallaPeliculas */ = {
+			isa = PBXGroup;
+			children = (
+				1571F69028232AAC00C4C171 /* PantallaPeliculasViewController.swift */,
+				1571F69128232AAC00C4C171 /* PantallaPeliculasViewController.xib */,
+			);
+			path = PantallaPeliculas;
 			sourceTree = "<group>";
 		};
 		252CF6EDA99A13C0D0E6ECF6 /* Frameworks */ = {
@@ -88,7 +105,6 @@
 				2F918FA3E14505CA52B85A96 /* Pods-Peliculas.debug.xcconfig */,
 				AE9B9D17AA873E0F33DAF107 /* Pods-Peliculas.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +170,9 @@
 			files = (
 				1571F6882822D80000C4C171 /* LaunchScreen.storyboard in Resources */,
 				1571F6852822D80000C4C171 /* Assets.xcassets in Resources */,
+				1571F69328232AAC00C4C171 /* PantallaPeliculasViewController.xib in Resources */,
 				1571F6832822D7F500C4C171 /* Main.storyboard in Resources */,
+				1571F69528232ECD00C4C171 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +227,7 @@
 			files = (
 				1571F6802822D7F500C4C171 /* ViewController.swift in Sources */,
 				1571F67C2822D7F500C4C171 /* AppDelegate.swift in Sources */,
+				1571F69228232AAC00C4C171 /* PantallaPeliculasViewController.swift in Sources */,
 				1571F67E2822D7F500C4C171 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
