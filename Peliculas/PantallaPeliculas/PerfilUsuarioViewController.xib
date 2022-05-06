@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,11 +59,19 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="xa8-3K-omo" firstAttribute="leading" secondItem="1QU-VB-4Vj" secondAttribute="leading" id="Cbl-un-txT"/>
+                                <constraint firstAttribute="trailing" secondItem="xa8-3K-omo" secondAttribute="trailing" id="JeS-jP-LSn"/>
+                                <constraint firstAttribute="trailing" secondItem="pBd-HN-oRP" secondAttribute="trailing" id="Yw5-cL-to4"/>
+                                <constraint firstItem="627-Cl-oWB" firstAttribute="leading" secondItem="1QU-VB-4Vj" secondAttribute="leading" id="fP5-eV-0fd"/>
+                                <constraint firstAttribute="trailing" secondItem="627-Cl-oWB" secondAttribute="trailing" id="hcw-ZJ-vCR"/>
+                                <constraint firstItem="pBd-HN-oRP" firstAttribute="leading" secondItem="1QU-VB-4Vj" secondAttribute="leading" id="qx5-aW-gHe"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir9-6H-fkP">
-                    <rect key="frame" x="20" y="422" width="374" height="37"/>
+                    <rect key="frame" x="20" y="225" width="374" height="37"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="37" id="Xq2-G1-cF5"/>
                     </constraints>
@@ -72,11 +80,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-KU-qZ9">
-                    <rect key="frame" x="20" y="467" width="374" height="395"/>
+                    <rect key="frame" x="20" y="270" width="374" height="592"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="395" id="DQD-Yy-euI"/>
-                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fWK-In-mgI">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -93,13 +98,13 @@
                 <constraint firstItem="mkY-gQ-CTt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EPE-ds-gvW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ir9-6H-fkP" secondAttribute="trailing" constant="20" id="FNP-19-FWG"/>
                 <constraint firstItem="zVb-KU-qZ9" firstAttribute="top" secondItem="ir9-6H-fkP" secondAttribute="bottom" constant="8" symbolic="YES" id="FUa-6O-eLK"/>
-                <constraint firstItem="ir9-6H-fkP" firstAttribute="top" secondItem="nQw-n9-Tp3" secondAttribute="bottom" constant="221" id="SGe-uV-UAD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zVb-KU-qZ9" secondAttribute="trailing" constant="20" id="SnX-U9-ML2"/>
                 <constraint firstItem="ir9-6H-fkP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TEf-5F-Bez"/>
                 <constraint firstItem="nQw-n9-Tp3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cHp-wL-Xbs"/>
                 <constraint firstItem="zVb-KU-qZ9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="goF-bW-78Z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nQw-n9-Tp3" secondAttribute="trailing" constant="16" id="o54-up-xPZ"/>
                 <constraint firstItem="zVb-KU-qZ9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="tMb-VN-ZFi"/>
+                <constraint firstItem="ir9-6H-fkP" firstAttribute="top" secondItem="nQw-n9-Tp3" secondAttribute="bottom" constant="24" id="vMg-AX-7Rb"/>
                 <constraint firstItem="nQw-n9-Tp3" firstAttribute="top" secondItem="mkY-gQ-CTt" secondAttribute="bottom" constant="8" symbolic="YES" id="wsz-0P-dYT"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>

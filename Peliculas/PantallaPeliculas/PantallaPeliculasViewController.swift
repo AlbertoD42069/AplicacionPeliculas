@@ -41,7 +41,7 @@ class PantallaPeliculasViewController: UIViewController {
         presenter = HomePresenter(userService: serviceManager)
         presenter?.attachView(self)
         presenter?.getMovies(typecatalog: .popular)
-        navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
       
     }
     @IBAction func TopRatedTapped(_ sender: Any) {
@@ -73,10 +73,8 @@ class PantallaPeliculasViewController: UIViewController {
             let pantallaPerfil = PerfilUsuarioViewController()
             self.navigationController?.pushViewController(pantallaPerfil, animated: true)
         }))
-        let action = UIAlertAction(title: "Cerrar Sesión", style: .default) { [weak self] action in
-            guard let self = self else {return}
+        let action = UIAlertAction(title: "Cerrar Sesión", style: .default) { action in
             self.logout()
-
         }
         perfil.addAction(action)
         
@@ -88,13 +86,19 @@ class PantallaPeliculasViewController: UIViewController {
             let result = try? Auth.auth().signOut()
             if (result != nil) {
                 DispatchQueue.main.async {
-                    let window = UIWindow(frame: UIScreen.main.bounds)
-
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let initialViewController = storyboard.instantiateInitialViewController()
-                      
-                     window.rootViewController = initialViewController
-                     window.makeKeyAndVisible()
+                    if  let initialViewController = storyboard.instantiateInitialViewController() {
+                        initialViewController.modalPresentationStyle = .fullScreen
+                        self.present(initialViewController, animated: true) {
+                            
+                                    self.navigationController?.viewControllers.removeAll()
+                                
+                            }
+                            
+                    
+                        }
+                    
+
                 }
                   
             }
@@ -136,7 +140,9 @@ extension PantallaPeliculasViewController: UICollectionViewDelegate, UICollectio
        
     }
  
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 }
 
 extension PantallaPeliculasViewController: HomeView {
