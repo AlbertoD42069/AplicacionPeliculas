@@ -2,21 +2,21 @@
 //  ProfilePresenter.swift
 //  Peliculas
 //
-//  Created by Adrian Dominguez Gómez on 06/05/22.
+//  Created by Jesus Alberto Diaz Dominguez on 05/05/22.
 //
 
 import Foundation
-
-struct ProfileModel {
+import Firebase
+struct ProfileViewData {
     let name : String
     let email : String
     let age: String
-    let favorites : [String] = []
 }
 protocol ProfileView {
     func startLoading()
     func finishLoading()
-    func refresh(_ movies: ProfileModel)
+    func refresh(_ data: ProfileViewData)
+    func updateFavorites(_ data: [FavoriteItem])
 }
 
 
@@ -29,6 +29,36 @@ class ProfilePresenter {
     }
     func attachView(_ view:ProfileView){
         self.view = view
+    }
+    
+    
+    func getData(){
+        let db = Firestore.firestore()
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+                
+         db.collection("usuario").document(email).getDocument{
+            (documentSnapshot, error) in
+            
+            if let document = documentSnapshot, error == nil {
+                
+                if let usuario = document.get("Nombres") as? String,
+                   let edad = document.get("Edad") as? String
+                {
+                   let data = ProfileViewData(name: usuario, email: email , age: edad)
+                    self.view?.refresh(data)
+                }
+             }
+            }
+    
+    }
+    
+    func getFavorites(){
+        var favorites = FavoritesManager()
+        favorites.getFavorites { favoritesItems in
+            self.view?.updateFavorites(favoritesItems)
+        }
     }
     
     

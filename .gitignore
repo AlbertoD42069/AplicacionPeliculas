@@ -8,3 +8,5 @@ Podfile.lock
 *.h
 
 Podfile
+
+*.xcbkptlist

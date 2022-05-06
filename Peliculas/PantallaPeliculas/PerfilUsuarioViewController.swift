@@ -10,8 +10,15 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class PerfilUsuarioViewController: UIViewController {
+class PerfilUsuarioViewController: UIViewController, ProfileView{
+    func updateFavorites(_ data: [FavoriteItem]) {
+        self.favorites = data
+        //reloadData
+    }
+    
 
+    var favorites: [FavoriteItem] = []
+    var presenter: ProfilePresenter?
     @IBOutlet weak var lblCorreoElectronico: UILabel!
     @IBOutlet weak var lblEdadUsuario: UILabel!
     @IBOutlet weak var lblNombreUsuario: UILabel!
@@ -21,7 +28,8 @@ class PerfilUsuarioViewController: UIViewController {
     init() {
         self.email = ""
         super.init(nibName: nil, bundle: nil)
-        
+        self.presenter = ProfilePresenter()
+        self.presenter?.attachView(self)
        
     }
     
@@ -38,33 +46,23 @@ class PerfilUsuarioViewController: UIViewController {
         {
             self.email = ""
         }
-        getDataUser()
+        presenter?.getData()
+    }
+       
+    func startLoading() {
+        
     }
     
-    let db = Firestore.firestore()
-    
-    func getDataUser(){
-        view.endEditing(true)
-        db.collection("usuario").document(email).getDocument{
-            (documentSnapshot, error) in
-            
-            if let document = documentSnapshot, error == nil {
-                if let usuario = document.get("Nombres") as? String {
-                    self.lblNombreUsuario.text = usuario
-                }else {self.lblNombreUsuario.text = "" }
-                
-                if let nombre = document.get("Edad") as? String {
-                    self.lblEdadUsuario.text = nombre
-                }else {
-                    self.lblEdadUsuario.text = ""
-                }
-            }else {
-                self.lblNombreUsuario.text = ""
-
-                self.lblEdadUsuario.text = ""
-            }
-        }
+    func finishLoading() {
+        
     }
+    
+    func refresh(_ data: ProfileViewData) {
+        self.lblNombreUsuario.text = data.name
+        self.lblEdadUsuario.text = data.age
+        lblCorreoElectronico.text = data.email
+    }
+    
     
 
 
