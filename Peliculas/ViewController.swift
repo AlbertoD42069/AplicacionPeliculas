@@ -7,38 +7,28 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseAnalytics
-
+import FirebaseFirestore
+//import FirebaseAnalytics
+enum ProviderInicio: String {
+    case basic
+}
 class ViewController: UIViewController {
 
-    @IBOutlet weak var btnIniciarSesion: UIButton!
-    @IBOutlet weak var lblEstadoLogin: UILabel!
-    @IBOutlet weak var txtPasword: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
-    override func viewDidLoad() {
+    @IBOutlet weak var btnLogIn: UIButton!
+    @IBOutlet weak var btnRegister: UIButton!
+    
+    private let db = Firestore.firestore()
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+   
     }
-
-    @IBAction func btnActionIniciarSesion(_ sender: Any) {
-        if let email = txtEmail.text, let Contraseña = txtPasword.text {
-            Auth.auth().signIn(withEmail: email, password: Contraseña) { result, error in
-                if let result = result, error == nil {
-                    self.navigationController?.pushViewController(PantallaPeliculasViewController(), animated: true)
-                    
-                }else{
-                    
-                    self.lblEstadoLogin.textColor = UIColor.red
-                    self.lblEstadoLogin.text = "Invalid username and/or password: You did not provide a valid login"
-                    /*let alertController = UIAlertController(title: "Error", message: "Se a producido un error registrando el usario", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
-                    self.present(alertController, animated: true, completion: nil)*/
-                    
-                    
-                }
-            }
-        }
+    @IBAction func btnActionRegister(_ sender: Any) {
+        navigationController?.pushViewController(RegistrarseViewController(), animated: true)
     }
     
+    @IBAction func btnActionLogIn(_ sender: Any) {
+        navigationController?.pushViewController(LogInViewController(), animated: true)
+    }    
 }
 
