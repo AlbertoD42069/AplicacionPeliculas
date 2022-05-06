@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct MoviesPResponse: Decodable{
+struct Movies: Decodable{
     //var page:Int
     var results:[Movie]
 }
@@ -16,9 +16,11 @@ struct MoviesPResponse: Decodable{
 struct Movie: Decodable{
     var id:Int
     var vote_average:Double
-    var original_title:String
-    var release_date:String
+    var original_title:String?
+    var name:String?
+    var release_date:String?
     var poster_path:String
     var overview:String
-    var original_language:String
+    var first_air_date: String?
+    //var original_language:String
 }

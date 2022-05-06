@@ -35,7 +35,7 @@ class RegistrarseViewController: UIViewController {
                     userData.userId = result.user.uid
                     
                     
-                    self.navigationController?.pushViewController(PantallaPeliculasViewController(email: result.user.email!, provider:  .basic), animated: true)
+                    self.navigationController?.pushViewController(PantallaPeliculasViewController(), animated: true)
                     let alertaController = UIAlertController(title: "Guardado", message: "Registro existoso" , preferredStyle: .alert)
                         alertaController.addAction(UIAlertAction(title: "aceptar", style: .default))
                         self.present(alertaController, animated: true, completion: nil)

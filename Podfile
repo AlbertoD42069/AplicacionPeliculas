@@ -10,6 +10,9 @@ target 'Peliculas' do
   pod 'Firebase'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+ # pod 'SwiftSpinner'
+  #pod "MKSpinner"
+
   
   # Pods for Peliculas
 

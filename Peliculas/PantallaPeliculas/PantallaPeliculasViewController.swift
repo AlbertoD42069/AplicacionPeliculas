@@ -9,100 +9,140 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-enum ProviderTypes: String {
-    case basic
-}
-
 class PantallaPeliculasViewController: UIViewController {
     
-    var moviePopulares:[MovieViewData]=[]
-    var presenter:HomePresenter?
-
-    @IBOutlet weak var topRatedButton: UIButton!
-    @IBOutlet weak var Coleccion: UICollectionView!
-
-    
-    private let email: String
-    private let provider: ProviderTypes
-    private let db = Firestore.firestore()
-    
-    
-    init(email: String, provider: ProviderTypes){
-        self.email = email
-        self.provider = provider
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
-    required init(coder: NSCoder) {
+    
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    var movies:[MovieViewData]=[]
+    var presenter:HomePresenter?
+    private let db = Firestore.firestore()
+
     
-        title = "TV show"
-        view.backgroundColor = .systemGray
-        
-        let defaults = UserDefaults.standard
-        defaults.set(email, forKey: "email")
-        defaults.set(provider.rawValue, forKey: "provider")
-        defaults.synchronize()
+    @IBOutlet weak var btnLista: UIButton!
+    @IBOutlet weak var Coleccion: UICollectionView!
+    
+    @IBOutlet weak var lblTitulo: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         let celdaColeccion = UINib(nibName: "CeldaPeliculaCollectionViewCell", bundle: nil)
         Coleccion.register(celdaColeccion, forCellWithReuseIdentifier: "CeldaColeccion")
         Coleccion.delegate = self
         Coleccion.dataSource = self
-        
-        
-        super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         
         let serviceManager = ServiceManager()
         presenter = HomePresenter(userService: serviceManager)
         presenter?.attachView(self)
         presenter?.getMovies(typecatalog: .popular)
+        navigationItem.setHidesBackButton(true, animated: false)
       
     }
     @IBAction func TopRatedTapped(_ sender: Any) {
-        self.title = "Top Rated"
+        self.lblTitulo.text = "Top Rated"
+        presenter?.getMovies(typecatalog: .topRated)
+    }
+    
+    @IBAction func btnPopular(_ sender: Any) {
+        self.lblTitulo.text = "Popular"
         presenter?.getMovies(typecatalog: .popular)
     }
     
+    @IBAction func btnOnTV(_ sender: Any) {
+        self.lblTitulo.text = "On Tv"
+        presenter?.getMovies(typecatalog: .onTv)
+    }
     
+    @IBAction func btnAiringToday(_ sender: Any) {
+        self.lblTitulo.text = "Airing Today"
+        presenter?.getMovies(typecatalog: .airingTV)
+    }
+    
+    @IBAction func btnActionLista(_ sender: Any) {
+        
+        
+        let perfil = UIAlertController(title: "perfil", message: " " , preferredStyle: .actionSheet)
+        
+        perfil.addAction(UIAlertAction(title: "Ver perfil", style: .default, handler: { (action) in
+            let pantallaPerfil = PerfilUsuarioViewController()
+            self.navigationController?.pushViewController(pantallaPerfil, animated: true)
+        }))
+        let action = UIAlertAction(title: "Cerrar Sesión", style: .default) { [weak self] action in
+            guard let self = self else {return}
+            self.logout()
+
+        }
+        perfil.addAction(action)
+        
+        self.present(perfil, animated: true)
+    }
+    func logout() {
+        do {
+            
+            let result = try? Auth.auth().signOut()
+            if (result != nil) {
+                DispatchQueue.main.async {
+                    let window = UIWindow(frame: UIScreen.main.bounds)
+
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let initialViewController = storyboard.instantiateInitialViewController()
+                      
+                     window.rootViewController = initialViewController
+                     window.makeKeyAndVisible()
+                }
+                  
+            }
+            
+        }catch{
+            print("error")
+        }
+    }
 }
 
 extension PantallaPeliculasViewController: UICollectionViewDelegate, UICollectionViewDataSource {
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return moviePopulares.count
+        return movies.count
     }
     //CeldaColeccion
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celdaColeccion = Coleccion.dequeueReusableCell(withReuseIdentifier: "CeldaColeccion", for: indexPath) as! CeldaPeliculaCollectionViewCell
         
-        celdaColeccion.lblNombrePelicula.text = moviePopulares[indexPath.row].title
-        celdaColeccion.lblFechaEstreno.text = moviePopulares[indexPath.row].date.capitalized
-        celdaColeccion.lblDescripcion.text = moviePopulares[indexPath.row].resume
+        celdaColeccion.lblNombrePelicula.text = movies[indexPath.row].title.capitalized
+        celdaColeccion.lblFechaEstreno.text = movies[indexPath.row].date.capitalized
+        celdaColeccion.lblDescripcion.text = movies[indexPath.row].resume
         
         
         celdaColeccion.imgPelicula.contentMode = .scaleAspectFill
         
         celdaColeccion.imgPelicula?.contentMode = .scaleAspectFill
         let linkDefault = "https://image.tmdb.org/t/p/w500/"
-        let completeLink = linkDefault + moviePopulares[indexPath.row].image
+        let completeLink = linkDefault + movies[indexPath.row].image
         celdaColeccion.imgPelicula?.downloaded(from: completeLink)
         celdaColeccion.imgPelicula?.clipsToBounds = true
+        celdaColeccion.imgPelicula.layer.cornerRadius = celdaColeccion.imgPelicula.frame.height/2
         
         return celdaColeccion
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detalles = DetallesPeliculaViewController()
-        navigationController?.pushViewController(detalles, animated: true)
+        let movie = movies[indexPath.row]
+        presenter?.goToMoviewDetail(nav: self.navigationController, movie: movie)
+       
     }
  
     
 }
 
 extension PantallaPeliculasViewController: HomeView {
+    func addfavorite(movieId: String) {
+    }
+    
     func startLoading() {
         
     }
@@ -112,18 +152,13 @@ extension PantallaPeliculasViewController: HomeView {
     }
     
     func setMovies(_ movies: [MovieViewData]) {
-        self.moviePopulares = movies
+        self.movies = movies
         self.Coleccion.reloadData()
     }
     
     func setEmptyMovies() {
         
     }
-    
-   
-    
-     
-    
 }
 extension PantallaPeliculasViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

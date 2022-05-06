@@ -22,9 +22,11 @@ class LogInViewController: UIViewController {
 
     @IBAction func btnActionLogIn(_ sender: Any) {
         if let email = txtUsername.text, let Contraseña = txtPassword.text {
+            let userDefailt = UserDefaults.standard
+            userDefailt.set(email, forKey: "email")
             Auth.auth().signIn(withEmail: email, password: Contraseña) { result, error in
                 if let result = result, error == nil {
-                    self.navigationController?.pushViewController(PantallaPeliculasViewController(email: result.user.email!, provider:  .basic), animated: true)
+                    self.navigationController?.pushViewController(PantallaPeliculasViewController(), animated: true)
                     
                 }else{
                     

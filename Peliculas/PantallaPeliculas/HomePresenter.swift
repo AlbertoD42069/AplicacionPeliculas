@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct MovieViewData{
     let id:Int
@@ -16,7 +17,7 @@ struct MovieViewData{
     let date : String
     
 }
-enum typeMovies  {
+enum type  {
     case popular
     case topRated
     case onTv
@@ -27,9 +28,8 @@ protocol HomeView {
     func finishLoading()
     func setMovies(_ movies: [MovieViewData])
     func setEmptyMovies()
+   
 }
-
-
 
 class HomePresenter {
     let userService:ServiceManager
@@ -47,40 +47,49 @@ class HomePresenter {
         userView = nil
     }
     
-    func getMovies(typecatalog: typeMovies){
+    func getMovies(typecatalog: type){
         var url = Urls.linkPopular
         switch typecatalog {
         case .popular:
             url = Urls.linkPopular
             break
         case .airingTV:
-            url = Urls.linkPopular
+            url = Urls.linkAiringToday
             break
         case .onTv:
-            url = Urls.linkPopular
+            url = Urls.linkOnTv
             break
         case .topRated:
-            url = Urls.topRated
+            url = Urls.linkTopRated
             break
         }
         
+        //MOVIE
         self.userView?.startLoading()
-        userService.execute(url: Urls.linkPopular, complited:{ [weak self] movies in
+        userService.execute(url: url, complited:{ [weak self] movies in
             self?.userView?.finishLoading()
             if(movies.count == 0){
                 self?.userView?.setEmptyMovies()
             }else{
                 let mappedUsers = movies.map{
-                    return MovieViewData(id:$0.id,title: $0.original_title, image: $0.poster_path, rating: $0.vote_average, resume: $0.overview, date: $0.release_date)
+                    return MovieViewData(id:$0.id, title: $0.original_title ?? $0.name ?? "Desconocido", image: $0.poster_path, rating: $0.vote_average, resume: $0.overview, date: $0.release_date ?? $0.first_air_date ?? "No date")
                 }
                 self?.userView?.setMovies(mappedUsers)
             }
-            
         })
     }
+    
+    
     func addfavorite(movie:MovieViewData){
         let favoriteManager = FavoritesManager()
         favoriteManager.setFavorites(movie: movie)
+    }
+    
+    func goToMoviewDetail(nav:UINavigationController?, movie:MovieViewData)
+    {
+        let detalles = DetallesPeliculaViewController()
+        detalles.pelicula = movie
+        nav?.pushViewController(detalles, animated: true)
     }
     
 }
