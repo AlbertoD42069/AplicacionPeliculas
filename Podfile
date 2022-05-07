@@ -12,6 +12,7 @@ target 'Peliculas' do
   pod 'FirebaseFirestoreSwift'
  # pod 'SwiftSpinner'
   #pod "MKSpinner"
+  pod 'ANLoader', :git => 'https://github.com/ANSCoder/ANLoader.git'
 
   
   # Pods for Peliculas

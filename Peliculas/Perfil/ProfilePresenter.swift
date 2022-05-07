@@ -22,7 +22,7 @@ protocol ProfileView {
 
 
 class ProfilePresenter {
-    var view:ProfileView?
+    var view:ProfileView?   
     
     init(){
         
