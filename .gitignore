@@ -12,3 +12,5 @@ Podfile
 *.xcbkptlist
 
 .DS_Store
+
+Pods/
