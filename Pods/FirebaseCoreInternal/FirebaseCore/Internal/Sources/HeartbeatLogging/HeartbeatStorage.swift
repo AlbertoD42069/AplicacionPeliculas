@@ -76,7 +76,7 @@ final class HeartbeatStorage: HeartbeatStorageProtocol {
   /// - Returns: A `HeartbeatStorage` instance.
   private static func makeHeartbeatStorage(id: String) -> HeartbeatStorage {
     #if os(tvOS)
-      let storage = UserDefaultsStorage.makeStorage(idtv: idtv)
+      let storage = UserDefaultsStorage.makeStorage(id: id)
     #else
       let storage = FileStorage.makeStorage(id: id)
     #endif // os(tvOS)

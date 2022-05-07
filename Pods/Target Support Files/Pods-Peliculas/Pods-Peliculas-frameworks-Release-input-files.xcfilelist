@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Peliculas/Pods-Peliculas-frameworks.sh
-${BUILT_PRODUCTS_DIR}/ANLoader/ANLoader.framework
 ${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework

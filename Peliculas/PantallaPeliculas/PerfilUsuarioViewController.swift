@@ -9,7 +9,7 @@ import UIKit
 
 import FirebaseAuth
 import FirebaseFirestore
-import ANLoader
+
 class PerfilUsuarioViewController: UIViewController, ProfileView{
     @IBOutlet weak var tablaFavoritos: UITableView!
     func updateFavorites(_ data: [FavoriteItem]) {
@@ -55,12 +55,10 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
     }
        
     func startLoading() {
-        ANLoader.showLoading()
-        sleep(4)
     }
     
     func finishLoading() {
-        ANLoader.hide()
+ 
     }
     
     func refresh(_ data: ProfileViewData) {
