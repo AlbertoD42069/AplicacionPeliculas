@@ -2,7 +2,7 @@
 //  LoginPresenter.swift
 //  Peliculas
 //
-//  Created by Adrian Dominguez Gómez on 06/05/22.
+//  Created by Jesus Alberto Diaz Dominguez on 06/05/22.
 //
 
 import Foundation
