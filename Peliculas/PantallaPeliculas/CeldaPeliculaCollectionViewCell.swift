@@ -2,7 +2,7 @@
 //  CeldaPeliculaCollectionViewCell.swift
 //  Peliculas
 //
-//  Created by Hector Guadalupe Climaco Flores on 05/05/22.
+//  Created by Jesus Alberto Diaz Dominguez on 05/05/22.
 //
 
 import UIKit
