@@ -10,3 +10,5 @@ Podfile.lock
 Podfile
 
 *.xcbkptlist
+
+.DS_Store
