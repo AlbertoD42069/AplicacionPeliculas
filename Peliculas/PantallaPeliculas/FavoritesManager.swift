@@ -8,10 +8,10 @@
 import Foundation
 import Firebase
 struct FavoriteItem {
-    var id:String
+    var id:Int
     var title: String
 }
-let collection = "UserPeliculaFavorita"
+let collection = "PeliculasFavoritas"
 
 class FavoritesManager {
     let dataBase = Firestore.firestore()
@@ -47,12 +47,40 @@ class FavoritesManager {
                 if let dataDictionary = document.data(){
                    dump(dataDictionary)
                     for item in dataDictionary {
-                        if let id = item.value as? String {
+                        if let id = item.value as? Int {
                            let newElement =  FavoriteItem(id: id, title: item.key)
                             self.favorites.append(newElement)
                         }
                     }
                     completion(self.favorites ?? [])
+                }
+            }else {
+                print("Document don't exist")
+            }
+        }
+    }
+    
+    
+    func deleteFavorite(name:String, completion: @escaping ()->()){
+        let db = Firestore.firestore()
+        let datosUsuario = Auth.auth().currentUser
+        guard let idUusario = datosUsuario?.uid else { return }
+       
+        //datos del documento
+        let datosMovieFav = db.collection(collection).document(idUusario)
+        
+        //traer los datos del diccionario del usuario
+        datosMovieFav.getDocument {  (document, err) in
+         
+            if let document = document, document.exists {
+                
+                if let dataDictionary = document.data(){
+                   
+                   var newDict =  dataDictionary
+                    newDict.removeValue(forKey: name)
+                    
+                    db.collection(collection).document(idUusario).setData(newDict)
+                    completion()
                 }
             }else {
                 print("Document don't exist")

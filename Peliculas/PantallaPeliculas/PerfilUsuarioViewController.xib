@@ -14,6 +14,7 @@
                 <outlet property="lblCorreoElectronico" destination="xa8-3K-omo" id="EzS-2p-6D0"/>
                 <outlet property="lblEdadUsuario" destination="pBd-HN-oRP" id="4jP-gV-co1"/>
                 <outlet property="lblNombreUsuario" destination="627-Cl-oWB" id="3Tf-Wp-EdN"/>
+                <outlet property="tablaFavoritos" destination="46w-8O-k7S" id="Hlo-YQ-t1D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -71,7 +72,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir9-6H-fkP">
-                    <rect key="frame" x="20" y="225" width="374" height="37"/>
+                    <rect key="frame" x="16" y="225" width="378" height="37"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="37" id="Xq2-G1-cF5"/>
                     </constraints>
@@ -79,31 +80,25 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-KU-qZ9">
-                    <rect key="frame" x="20" y="270" width="374" height="592"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="46w-8O-k7S">
+                    <rect key="frame" x="16" y="262" width="382" height="600"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fWK-In-mgI">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="46w-8O-k7S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8e6-r9-yh9"/>
                 <constraint firstItem="mkY-gQ-CTt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9tT-o6-Hub"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mkY-gQ-CTt" secondAttribute="trailing" constant="20" id="ArK-K8-ppN"/>
+                <constraint firstItem="46w-8O-k7S" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ArO-MV-BB7"/>
                 <constraint firstItem="mkY-gQ-CTt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="EPE-ds-gvW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ir9-6H-fkP" secondAttribute="trailing" constant="20" id="FNP-19-FWG"/>
-                <constraint firstItem="zVb-KU-qZ9" firstAttribute="top" secondItem="ir9-6H-fkP" secondAttribute="bottom" constant="8" symbolic="YES" id="FUa-6O-eLK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zVb-KU-qZ9" secondAttribute="trailing" constant="20" id="SnX-U9-ML2"/>
-                <constraint firstItem="ir9-6H-fkP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TEf-5F-Bez"/>
+                <constraint firstItem="ir9-6H-fkP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TEf-5F-Bez"/>
                 <constraint firstItem="nQw-n9-Tp3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cHp-wL-Xbs"/>
-                <constraint firstItem="zVb-KU-qZ9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="goF-bW-78Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="46w-8O-k7S" secondAttribute="trailing" constant="16" id="ewv-ix-wtJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nQw-n9-Tp3" secondAttribute="trailing" constant="16" id="o54-up-xPZ"/>
-                <constraint firstItem="zVb-KU-qZ9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="tMb-VN-ZFi"/>
+                <constraint firstItem="46w-8O-k7S" firstAttribute="top" secondItem="ir9-6H-fkP" secondAttribute="bottom" id="sKl-Me-CKs"/>
                 <constraint firstItem="ir9-6H-fkP" firstAttribute="top" secondItem="nQw-n9-Tp3" secondAttribute="bottom" constant="24" id="vMg-AX-7Rb"/>
                 <constraint firstItem="nQw-n9-Tp3" firstAttribute="top" secondItem="mkY-gQ-CTt" secondAttribute="bottom" constant="8" symbolic="YES" id="wsz-0P-dYT"/>
             </constraints>

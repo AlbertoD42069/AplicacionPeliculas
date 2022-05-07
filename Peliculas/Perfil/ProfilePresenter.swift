@@ -55,12 +55,19 @@ class ProfilePresenter {
     }
     
     func getFavorites(){
-        var favorites = FavoritesManager()
+        let favorites = FavoritesManager()
         favorites.getFavorites { favoritesItems in
             self.view?.updateFavorites(favoritesItems)
         }
     }
     
     
-    
+    func deleteFavorites(name:String){
+        
+        let favorites = FavoritesManager()
+        favorites.deleteFavorite(name: name) {
+            self.getFavorites()
+        }
+        
+    }
 }

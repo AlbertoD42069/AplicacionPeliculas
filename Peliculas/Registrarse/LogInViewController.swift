@@ -8,8 +8,27 @@
 import UIKit
 import FirebaseAuth
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, LoginView {
+    func startLoading() {
+        
+    }
+    
+    func finishLoading() {
+        
+    }
+    
+    func Login(success: Bool) {
+        if success {
+            self.navigationController?.pushViewController(PantallaPeliculasViewController(), animated: true)
+        }else {
+            self.lblEstadoSesion.textColor = UIColor.red
+            self.lblEstadoSesion.text = "Invalid username and/or password: You did not provide a valid login"
+        }
+        
+    }
+    
 
+    var presenter:LoginPresenter?
     @IBOutlet weak var btnLogIn: UIButton!
     @IBOutlet weak var lblEstadoSesion: UILabel!
     @IBOutlet weak var txtPassword: UITextField!
@@ -19,27 +38,13 @@ class LogInViewController: UIViewController {
         self.txtUsername.text = "persona12@gmail.com"
         self.txtPassword.text = "123456"
         // Do any additional setup after loading the view.
+        presenter = LoginPresenter()
+        presenter?.attachView(self)
     }
 
     @IBAction func btnActionLogIn(_ sender: Any) {
         if let email = txtUsername.text, let Contraseña = txtPassword.text {
-            let userDefailt = UserDefaults.standard
-            userDefailt.set(email, forKey: "email")
-            Auth.auth().signIn(withEmail: email, password: Contraseña) { result, error in
-                if let result = result, error == nil {
-                    self.navigationController?.pushViewController(PantallaPeliculasViewController(), animated: true)
-                    
-                }else{
-                    
-                   self.lblEstadoSesion.textColor = UIColor.red
-                   self.lblEstadoSesion.text = "Invalid username and/or password: You did not provide a valid login"
-                    /*let alertController = UIAlertController(title: "Error", message: "Se a producido un error registrando el usario", preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
-                    self.present(alertController, animated: true, completion: nil)*/
-                    
-                    
-                }
-            }
+            self.presenter?.login(email: email, pass: Contraseña)
         }
     }
     

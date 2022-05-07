@@ -23,7 +23,7 @@
 		1571F6A628234F3200C4C171 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571F6A528234F3200C4C171 /* UserData.swift */; };
 		1579C8B828243244005A2788 /* CeldaPeliculaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8B628243244005A2788 /* CeldaPeliculaCollectionViewCell.swift */; };
 		1579C8B928243244005A2788 /* CeldaPeliculaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C8B728243244005A2788 /* CeldaPeliculaCollectionViewCell.xib */; };
-		1579C8BC28243441005A2788 /* StrucPeliculas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8BB28243441005A2788 /* StrucPeliculas.swift */; };
+		1579C8BC28243441005A2788 /* ModeloPelicula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8BB28243441005A2788 /* ModeloPelicula.swift */; };
 		1579C8C028243A67005A2788 /* DetallesPeliculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8BE28243A67005A2788 /* DetallesPeliculaViewController.swift */; };
 		1579C8C128243A67005A2788 /* DetallesPeliculaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C8BF28243A67005A2788 /* DetallesPeliculaViewController.xib */; };
 		1579C8C528243D02005A2788 /* PerfilUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8C328243D02005A2788 /* PerfilUsuarioViewController.swift */; };
@@ -32,9 +32,11 @@
 		1579C8CC282454B7005A2788 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8CB282454B7005A2788 /* ServiceManager.swift */; };
 		1579C8D02824857E005A2788 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8CF2824857E005A2788 /* FavoritesManager.swift */; };
 		15FBC279282486DB0057B862 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FBC278282486DB0057B862 /* HomePresenter.swift */; };
-		15FBC27B2824D4D10057B862 /* StructTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FBC27A2824D4D10057B862 /* StructTV.swift */; };
 		52A25F80DBE868E94552C4AE /* Pods_Peliculas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB37CFFEC6CD5825129BF3F /* Pods_Peliculas.framework */; };
 		9CC970312825DEF4006024E4 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970302825DEF4006024E4 /* ProfilePresenter.swift */; };
+		9CC970332825E49C006024E4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970322825E49C006024E4 /* LoginPresenter.swift */; };
+		9CC970362825E679006024E4 /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970342825E679006024E4 /* FavoritosTableViewCell.swift */; };
+		9CC970372825E679006024E4 /* FavoritosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC970352825E679006024E4 /* FavoritosTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +58,7 @@
 		1571F6A528234F3200C4C171 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		1579C8B628243244005A2788 /* CeldaPeliculaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CeldaPeliculaCollectionViewCell.swift; path = Peliculas/PantallaPeliculas/CeldaPeliculaCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		1579C8B728243244005A2788 /* CeldaPeliculaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CeldaPeliculaCollectionViewCell.xib; path = ../CeldaPeliculaCollectionViewCell.xib; sourceTree = "<group>"; };
-		1579C8BB28243441005A2788 /* StrucPeliculas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StrucPeliculas.swift; path = Peliculas/PantallaPeliculas/StrucPeliculas.swift; sourceTree = SOURCE_ROOT; };
+		1579C8BB28243441005A2788 /* ModeloPelicula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModeloPelicula.swift; path = Peliculas/PantallaPeliculas/ModeloPelicula.swift; sourceTree = SOURCE_ROOT; };
 		1579C8BE28243A67005A2788 /* DetallesPeliculaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetallesPeliculaViewController.swift; path = Peliculas/PantallaPeliculas/DetallesPeliculaViewController.swift; sourceTree = SOURCE_ROOT; };
 		1579C8BF28243A67005A2788 /* DetallesPeliculaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetallesPeliculaViewController.xib; path = Peliculas/PantallaPeliculas/DetallesPeliculaViewController.xib; sourceTree = SOURCE_ROOT; };
 		1579C8C328243D02005A2788 /* PerfilUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilUsuarioViewController.swift; path = Peliculas/PantallaPeliculas/PerfilUsuarioViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -65,9 +67,11 @@
 		1579C8CB282454B7005A2788 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Peliculas/PantallaPeliculas/ServiceManager.swift; sourceTree = SOURCE_ROOT; };
 		1579C8CF2824857E005A2788 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesManager.swift; path = Peliculas/PantallaPeliculas/FavoritesManager.swift; sourceTree = SOURCE_ROOT; };
 		15FBC278282486DB0057B862 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = Peliculas/PantallaPeliculas/HomePresenter.swift; sourceTree = SOURCE_ROOT; };
-		15FBC27A2824D4D10057B862 /* StructTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTV.swift; sourceTree = "<group>"; };
 		2F918FA3E14505CA52B85A96 /* Pods-Peliculas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.debug.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.debug.xcconfig"; sourceTree = "<group>"; };
 		9CC970302825DEF4006024E4 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		9CC970322825E49C006024E4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		9CC970342825E679006024E4 /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
+		9CC970352825E679006024E4 /* FavoritosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritosTableViewCell.xib; sourceTree = "<group>"; };
 		AE9B9D17AA873E0F33DAF107 /* Pods-Peliculas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.release.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.release.xcconfig"; sourceTree = "<group>"; };
 		DEB37CFFEC6CD5825129BF3F /* Pods_Peliculas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peliculas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,7 +113,7 @@
 				1579C8CA28245489005A2788 /* JSON */,
 				1579C8C72824491B005A2788 /* ExtensionPelicula */,
 				1579C8C228243CE6005A2788 /* Perfil */,
-				1579C8BA28243420005A2788 /* struct */,
+				1579C8BA28243420005A2788 /* ModelosDeDatos */,
 				1571F6A028234D0D00C4C171 /* IniciarSesion */,
 				1571F6962823458D00C4C171 /* Registrarse */,
 				1571F68F28232A8700C4C171 /* PantallaPeliculas */,
@@ -152,6 +156,7 @@
 			children = (
 				1571F6A128234D3B00C4C171 /* LogInViewController.swift */,
 				1571F6A228234D3B00C4C171 /* LogInViewController.xib */,
+				9CC970322825E49C006024E4 /* LoginPresenter.swift */,
 			);
 			path = IniciarSesion;
 			sourceTree = "<group>";
@@ -165,13 +170,12 @@
 			path = celda;
 			sourceTree = "<group>";
 		};
-		1579C8BA28243420005A2788 /* struct */ = {
+		1579C8BA28243420005A2788 /* ModelosDeDatos */ = {
 			isa = PBXGroup;
 			children = (
-				1579C8BB28243441005A2788 /* StrucPeliculas.swift */,
-				15FBC27A2824D4D10057B862 /* StructTV.swift */,
+				1579C8BB28243441005A2788 /* ModeloPelicula.swift */,
 			);
-			path = struct;
+			path = ModelosDeDatos;
 			sourceTree = "<group>";
 		};
 		1579C8BD28243A44005A2788 /* detalles */ = {
@@ -189,6 +193,8 @@
 				1579C8C328243D02005A2788 /* PerfilUsuarioViewController.swift */,
 				1579C8C428243D02005A2788 /* PerfilUsuarioViewController.xib */,
 				9CC970302825DEF4006024E4 /* ProfilePresenter.swift */,
+				9CC970342825E679006024E4 /* FavoritosTableViewCell.swift */,
+				9CC970352825E679006024E4 /* FavoritosTableViewCell.xib */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 				1579C8B928243244005A2788 /* CeldaPeliculaCollectionViewCell.xib in Resources */,
 				1571F6832822D7F500C4C171 /* Main.storyboard in Resources */,
 				1571F69F2823462A00C4C171 /* RegistrarseViewController.xib in Resources */,
+				9CC970372825E679006024E4 /* FavoritosTableViewCell.xib in Resources */,
 				1571F69528232ECD00C4C171 /* GoogleService-Info.plist in Resources */,
 				1571F6A428234D3B00C4C171 /* LogInViewController.xib in Resources */,
 				1579C8C628243D02005A2788 /* PerfilUsuarioViewController.xib in Resources */,
@@ -361,14 +368,15 @@
 				1579C8C028243A67005A2788 /* DetallesPeliculaViewController.swift in Sources */,
 				15FBC279282486DB0057B862 /* HomePresenter.swift in Sources */,
 				1579C8D02824857E005A2788 /* FavoritesManager.swift in Sources */,
+				9CC970362825E679006024E4 /* FavoritosTableViewCell.swift in Sources */,
 				1579C8CC282454B7005A2788 /* ServiceManager.swift in Sources */,
 				1571F6802822D7F500C4C171 /* ViewController.swift in Sources */,
 				1571F6A628234F3200C4C171 /* UserData.swift in Sources */,
-				15FBC27B2824D4D10057B862 /* StructTV.swift in Sources */,
 				1571F6A328234D3B00C4C171 /* LogInViewController.swift in Sources */,
 				9CC970312825DEF4006024E4 /* ProfilePresenter.swift in Sources */,
 				1579C8C928244938005A2788 /* ExtensionImageView.swift in Sources */,
-				1579C8BC28243441005A2788 /* StrucPeliculas.swift in Sources */,
+				9CC970332825E49C006024E4 /* LoginPresenter.swift in Sources */,
+				1579C8BC28243441005A2788 /* ModeloPelicula.swift in Sources */,
 				1571F67C2822D7F500C4C171 /* AppDelegate.swift in Sources */,
 				1571F69228232AAC00C4C171 /* PantallaPeliculasViewController.swift in Sources */,
 				1571F67E2822D7F500C4C171 /* SceneDelegate.swift in Sources */,

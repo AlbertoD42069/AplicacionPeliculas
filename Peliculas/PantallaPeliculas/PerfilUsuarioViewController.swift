@@ -11,9 +11,10 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class PerfilUsuarioViewController: UIViewController, ProfileView{
+    @IBOutlet weak var tablaFavoritos: UITableView!
     func updateFavorites(_ data: [FavoriteItem]) {
         self.favorites = data
-        //reloadData
+        self.tablaFavoritos.reloadData()
     }
     
 
@@ -47,6 +48,10 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
             self.email = ""
         }
         presenter?.getData()
+        presenter?.getFavorites()
+        let celdaFavoritos = UINib(nibName: "FavoritosTableViewCell", bundle: nil)
+        tablaFavoritos.register(celdaFavoritos, forCellReuseIdentifier: "FavoritosTableViewCell")
+        tablaFavoritos.dataSource = self
     }
        
     func startLoading() {
@@ -76,4 +81,36 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
     }
     */
 
+}
+
+extension PerfilUsuarioViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.favorites.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celdaFavoritos = tablaFavoritos.dequeueReusableCell(withIdentifier: "FavoritosTableViewCell", for: indexPath) as! FavoritosTableViewCell
+        
+        let item = self.favorites[indexPath.row]
+        
+        celdaFavoritos.lblTitle.text = item.title
+        celdaFavoritos.delegate = self
+        return celdaFavoritos
+    }
+    
+    
+    
+}
+
+
+extension PerfilUsuarioViewController: FavoriteCellDelegate {
+    func eliminarFavorito(cell: UITableViewCell) {
+        let index = self.tablaFavoritos.indexPath(for: cell)
+        if let row = index?.row{
+            let item = self.favorites[row]
+            self.presenter?.deleteFavorites(name: item.title)
+        }
+    }
+    
+    
 }
