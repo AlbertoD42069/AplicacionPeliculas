@@ -35,8 +35,6 @@ class LogInViewController: UIViewController, LoginView {
     @IBOutlet weak var txtUsername: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.txtUsername.text = "persona12@gmail.com"
-        self.txtPassword.text = "123456"
         // Do any additional setup after loading the view.
         presenter = LoginPresenter()
         presenter?.attachView(self)
