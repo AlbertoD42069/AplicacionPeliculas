@@ -130,7 +130,7 @@ extension PantallaPeliculasViewController: UICollectionViewDelegate, UICollectio
         let completeLink = linkDefault + movies[indexPath.row].image
         celdaColeccion.imgPelicula?.downloaded(from: completeLink)
         celdaColeccion.imgPelicula?.clipsToBounds = true
-        celdaColeccion.imgPelicula.layer.cornerRadius = celdaColeccion.imgPelicula.frame.height/2
+      
         
         return celdaColeccion
     }
@@ -169,7 +169,7 @@ extension PantallaPeliculasViewController: HomeView {
 extension PantallaPeliculasViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let with = self.view.frame.width / 2 - 5
-        let height = self.view.frame.height / 3 - 5
+        let height = self.view.frame.height / 2.5 
         return CGSize(width: with, height: height)
     }
 }

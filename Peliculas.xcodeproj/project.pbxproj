@@ -22,7 +22,6 @@
 		1571F6A428234D3B00C4C171 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1571F6A228234D3B00C4C171 /* LogInViewController.xib */; };
 		1571F6A628234F3200C4C171 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571F6A528234F3200C4C171 /* UserData.swift */; };
 		1579C8B828243244005A2788 /* CeldaPeliculaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8B628243244005A2788 /* CeldaPeliculaCollectionViewCell.swift */; };
-		1579C8B928243244005A2788 /* CeldaPeliculaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C8B728243244005A2788 /* CeldaPeliculaCollectionViewCell.xib */; };
 		1579C8BC28243441005A2788 /* ModeloPelicula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8BB28243441005A2788 /* ModeloPelicula.swift */; };
 		1579C8C028243A67005A2788 /* DetallesPeliculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8BE28243A67005A2788 /* DetallesPeliculaViewController.swift */; };
 		1579C8C128243A67005A2788 /* DetallesPeliculaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1579C8BF28243A67005A2788 /* DetallesPeliculaViewController.xib */; };
@@ -37,6 +36,7 @@
 		9CC970332825E49C006024E4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970322825E49C006024E4 /* LoginPresenter.swift */; };
 		9CC970362825E679006024E4 /* FavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970342825E679006024E4 /* FavoritosTableViewCell.swift */; };
 		9CC970372825E679006024E4 /* FavoritosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC970352825E679006024E4 /* FavoritosTableViewCell.xib */; };
+		9CC970392825FC13006024E4 /* CeldaPeliculaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC970382825FC13006024E4 /* CeldaPeliculaCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +58,6 @@
 		1571F6A228234D3B00C4C171 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LogInViewController.xib; path = Peliculas/Registrarse/LogInViewController.xib; sourceTree = SOURCE_ROOT; };
 		1571F6A528234F3200C4C171 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		1579C8B628243244005A2788 /* CeldaPeliculaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CeldaPeliculaCollectionViewCell.swift; path = Peliculas/PantallaPeliculas/CeldaPeliculaCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		1579C8B728243244005A2788 /* CeldaPeliculaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CeldaPeliculaCollectionViewCell.xib; path = ../CeldaPeliculaCollectionViewCell.xib; sourceTree = "<group>"; };
 		1579C8BB28243441005A2788 /* ModeloPelicula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModeloPelicula.swift; path = Peliculas/PantallaPeliculas/ModeloPelicula.swift; sourceTree = SOURCE_ROOT; };
 		1579C8BE28243A67005A2788 /* DetallesPeliculaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetallesPeliculaViewController.swift; path = Peliculas/PantallaPeliculas/DetallesPeliculaViewController.swift; sourceTree = SOURCE_ROOT; };
 		1579C8BF28243A67005A2788 /* DetallesPeliculaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetallesPeliculaViewController.xib; path = Peliculas/PantallaPeliculas/DetallesPeliculaViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -74,6 +73,7 @@
 		9CC970322825E49C006024E4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		9CC970342825E679006024E4 /* FavoritosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		9CC970352825E679006024E4 /* FavoritosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritosTableViewCell.xib; sourceTree = "<group>"; };
+		9CC970382825FC13006024E4 /* CeldaPeliculaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CeldaPeliculaCollectionViewCell.xib; path = Peliculas/PantallaPeliculas/CeldaPeliculaCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 		1571F67A2822D7F500C4C171 /* Peliculas */ = {
 			isa = PBXGroup;
 			children = (
-				1579C8CD28248542005A2788 /* Favoritos */,
-				1579C8CA28245489005A2788 /* JSON */,
+				1579C8CD28248542005A2788 /* ManagerFavoritos */,
+				1579C8CA28245489005A2788 /* Services */,
 				1579C8C72824491B005A2788 /* ExtensionPelicula */,
 				1579C8C228243CE6005A2788 /* Perfil */,
 				1579C8BA28243420005A2788 /* ModelosDeDatos */,
@@ -164,8 +164,8 @@
 		1579C8B52824321A005A2788 /* celda */ = {
 			isa = PBXGroup;
 			children = (
+				9CC970382825FC13006024E4 /* CeldaPeliculaCollectionViewCell.xib */,
 				1579C8B628243244005A2788 /* CeldaPeliculaCollectionViewCell.swift */,
-				1579C8B728243244005A2788 /* CeldaPeliculaCollectionViewCell.xib */,
 			);
 			path = celda;
 			sourceTree = "<group>";
@@ -207,20 +207,20 @@
 			path = ExtensionPelicula;
 			sourceTree = "<group>";
 		};
-		1579C8CA28245489005A2788 /* JSON */ = {
+		1579C8CA28245489005A2788 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				1579C8CB282454B7005A2788 /* ServiceManager.swift */,
 			);
-			path = JSON;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		1579C8CD28248542005A2788 /* Favoritos */ = {
+		1579C8CD28248542005A2788 /* ManagerFavoritos */ = {
 			isa = PBXGroup;
 			children = (
 				1579C8CF2824857E005A2788 /* FavoritesManager.swift */,
 			);
-			path = Favoritos;
+			path = ManagerFavoritos;
 			sourceTree = "<group>";
 		};
 		AEDF39001F925AD695ADA44A /* Pods */ = {
@@ -304,13 +304,13 @@
 				1571F6852822D80000C4C171 /* Assets.xcassets in Resources */,
 				1571F69328232AAC00C4C171 /* PantallaPeliculasViewController.xib in Resources */,
 				1579C8C128243A67005A2788 /* DetallesPeliculaViewController.xib in Resources */,
-				1579C8B928243244005A2788 /* CeldaPeliculaCollectionViewCell.xib in Resources */,
 				1571F6832822D7F500C4C171 /* Main.storyboard in Resources */,
 				1571F69F2823462A00C4C171 /* RegistrarseViewController.xib in Resources */,
 				9CC970372825E679006024E4 /* FavoritosTableViewCell.xib in Resources */,
 				1571F69528232ECD00C4C171 /* GoogleService-Info.plist in Resources */,
 				1571F6A428234D3B00C4C171 /* LogInViewController.xib in Resources */,
 				1579C8C628243D02005A2788 /* PerfilUsuarioViewController.xib in Resources */,
+				9CC970392825FC13006024E4 /* CeldaPeliculaCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
