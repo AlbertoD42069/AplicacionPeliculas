@@ -13,14 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
+    var token = AuthenticationToken()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        // Override point for customization after application launch.
-       
+        token.validarToken()
         
-      
         
         return true
     }

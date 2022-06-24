@@ -11,13 +11,13 @@ class UserData {
     
     static let shared = UserData()
     
-    var userId:String?
+    var userEmail:String?
     
     
     init(){}
     
     func isUserLogued() -> Bool {
-        guard let id = userId else
+        guard let Email = userEmail else
         {
             return false
         }

@@ -8,10 +8,15 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseRemoteConfig
 
 class PantallaPeliculasViewController: UIViewController {
     
+    var remoteConfig: RemoteConfig
+    let remoteSetting = RemoteConfigSettings()
     init() {
+        remoteConfig = RemoteConfig.remoteConfig()
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,14 +35,16 @@ class PantallaPeliculasViewController: UIViewController {
     @IBOutlet weak var lblTitulo: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let celdaColeccion = UINib(nibName: "CeldaPeliculaCollectionViewCell", bundle: nil)
         Coleccion.register(celdaColeccion, forCellWithReuseIdentifier: "CeldaColeccion")
         Coleccion.delegate = self
         Coleccion.dataSource = self
+        
         // Do any additional setup after loading the view.
         
         let serviceManager = ServiceManager()
+        
+        
         presenter = HomePresenter(userService: serviceManager)
         presenter?.attachView(self)
         presenter?.getMovies(typecatalog: .popular)
@@ -45,6 +52,7 @@ class PantallaPeliculasViewController: UIViewController {
       
     }
     @IBAction func TopRatedTapped(_ sender: Any) {
+        
         self.lblTitulo.text = "Top Rated"
         presenter?.getMovies(typecatalog: .topRated)
     }
@@ -70,13 +78,26 @@ class PantallaPeliculasViewController: UIViewController {
         let perfil = UIAlertController(title: "perfil", message: " " , preferredStyle: .actionSheet)
         
         perfil.addAction(UIAlertAction(title: "Ver perfil", style: .default, handler: { (action) in
+            
             let pantallaPerfil = PerfilUsuarioViewController()
             self.navigationController?.pushViewController(pantallaPerfil, animated: true)
         }))
+        
         let action = UIAlertAction(title: "Cerrar Sesión", style: .default) { action in
             self.logout()
+            //eliminacion de datos del UserDefaults
+            let userDefailt = UserDefaults.standard
+            userDefailt.removeObject(forKey: "email")
+            userDefailt.removeObject(forKey: "pass")
+            userDefailt.synchronize()
+        }
+        
+        let chat = UIAlertAction(title: "Chat", style: .default) { action in
+            let pantallaChat = TablaConversacionesViewController()
+            self.navigationController?.pushViewController(pantallaChat, animated: true)
         }
         perfil.addAction(action)
+        perfil.addAction(chat)
         
         self.present(perfil, animated: true)
     }
@@ -90,8 +111,7 @@ class PantallaPeliculasViewController: UIViewController {
                     if  let initialViewController = storyboard.instantiateInitialViewController() {
                         initialViewController.modalPresentationStyle = .fullScreen
                         self.present(initialViewController, animated: true) {
-                            
-                                    self.navigationController?.viewControllers.removeAll()
+                            self.navigationController?.viewControllers.removeAll()
                                 
                             }
                             

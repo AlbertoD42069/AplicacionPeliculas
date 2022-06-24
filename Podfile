@@ -10,8 +10,12 @@ target 'Peliculas' do
   pod 'Firebase'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
- # pod 'SwiftSpinner'
-  #pod "MKSpinner"
+  pod 'SwiftSpinner'
+  pod 'FirebaseRemoteConfig', '~> 9.2'
+  pod 'MessageKit', '~> 3.8'
+  pod 'JGProgressHUD', '~> 2.2'
+  pod 'FirebaseDatabase', '~> 9.2'
+  
   
   # Pods for Peliculas
 

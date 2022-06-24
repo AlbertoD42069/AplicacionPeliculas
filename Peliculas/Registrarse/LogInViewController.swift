@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController, LoginView {
+    
     func startLoading() {
         
     }
@@ -27,12 +28,13 @@ class LogInViewController: UIViewController, LoginView {
         
     }
     
-
     var presenter:LoginPresenter?
+    
     @IBOutlet weak var btnLogIn: UIButton!
     @IBOutlet weak var lblEstadoSesion: UILabel!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtUsername: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,6 +48,9 @@ class LogInViewController: UIViewController, LoginView {
         }
     }
     
+    @IBAction func btnActionRegistro(_ sender: Any) {
+        navigationController?.pushViewController(RegistrarseViewController(), animated: true)
+    }
     /*
     // MARK: - Navigation
 

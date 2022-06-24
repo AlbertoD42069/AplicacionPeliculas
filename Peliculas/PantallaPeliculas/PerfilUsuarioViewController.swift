@@ -9,9 +9,14 @@ import UIKit
 
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseRemoteConfig
 
 class PerfilUsuarioViewController: UIViewController, ProfileView{
     @IBOutlet weak var tablaFavoritos: UITableView!
+
+    
+    @IBOutlet weak var lblTestAB: UILabel!
+    
     func updateFavorites(_ data: [FavoriteItem]) {
         self.favorites = data
         self.tablaFavoritos.reloadData()
@@ -25,9 +30,9 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
     @IBOutlet weak var lblNombreUsuario: UILabel!
     @IBOutlet weak var imgPerfil: UIImageView!
     
-    private var email: String
     init() {
-        self.email = ""
+        
+        
         super.init(nibName: nil, bundle: nil)
         self.presenter = ProfilePresenter()
         self.presenter?.attachView(self)
@@ -39,14 +44,6 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userDefault = UserDefaults.standard
-        
-        if let email = userDefault.value(forKey: "email") as? String {
-            self.email = email
-        }else
-        {
-            self.email = ""
-        }
         presenter?.getData()
         presenter?.getFavorites()
         let celdaFavoritos = UINib(nibName: "FavoritosTableViewCell", bundle: nil)
@@ -66,20 +63,6 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
         self.lblEdadUsuario.text = data.age
         lblCorreoElectronico.text = data.email
     }
-    
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension PerfilUsuarioViewController: UITableViewDataSource {

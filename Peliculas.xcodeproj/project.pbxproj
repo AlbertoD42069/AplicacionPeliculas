@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152D7A1A2832B6FC0041B61B /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D7A192832B6FC0041B61B /* RegisterPresenter.swift */; };
+		152D7A1C2832DE4D0041B61B /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D7A1B2832DE4D0041B61B /* ViewControllerPresenter.swift */; };
 		1571F67C2822D7F500C4C171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571F67B2822D7F500C4C171 /* AppDelegate.swift */; };
 		1571F67E2822D7F500C4C171 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571F67D2822D7F500C4C171 /* SceneDelegate.swift */; };
 		1571F6802822D7F500C4C171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571F67F2822D7F500C4C171 /* ViewController.swift */; };
@@ -30,6 +32,18 @@
 		1579C8C928244938005A2788 /* ExtensionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8C828244938005A2788 /* ExtensionImageView.swift */; };
 		1579C8CC282454B7005A2788 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8CB282454B7005A2788 /* ServiceManager.swift */; };
 		1579C8D02824857E005A2788 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579C8CF2824857E005A2788 /* FavoritesManager.swift */; };
+		157EC0FD286236B200E369AF /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC0FC286236B200E369AF /* RemoteConfig.swift */; };
+		157EC0FF286243D300E369AF /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC0FE286243D300E369AF /* AuthenticationToken.swift */; };
+		157EC101286279CB00E369AF /* RCValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC100286279CB00E369AF /* RCValues.swift */; };
+		157EC1052864D33B00E369AF /* TablaConversacionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC1032864D33B00E369AF /* TablaConversacionesViewController.swift */; };
+		157EC1062864D33B00E369AF /* TablaConversacionesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157EC1042864D33B00E369AF /* TablaConversacionesViewController.xib */; };
+		157EC1092864D37C00E369AF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC1072864D37C00E369AF /* ChatViewController.swift */; };
+		157EC10A2864D37C00E369AF /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157EC1082864D37C00E369AF /* ChatViewController.xib */; };
+		157EC1182865052F00E369AF /* CeldaConversacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC1162865052F00E369AF /* CeldaConversacionTableViewCell.swift */; };
+		157EC1192865052F00E369AF /* CeldaConversacionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157EC1172865052F00E369AF /* CeldaConversacionTableViewCell.xib */; };
+		157EC11B28650ADE00E369AF /* ModelChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC11A28650ADE00E369AF /* ModelChat.swift */; };
+		157EC11E2865174C00E369AF /* Fecha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC11D2865174C00E369AF /* Fecha.swift */; };
+		157EC12028660BB600E369AF /* ModelConversacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC11F28660BB600E369AF /* ModelConversacion.swift */; };
 		15FBC279282486DB0057B862 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FBC278282486DB0057B862 /* HomePresenter.swift */; };
 		65E91744C2BB9E9088B32CC6 /* Pods_Peliculas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14287F56A719B57ECBA11AC4 /* Pods_Peliculas.framework */; };
 		9CC970312825DEF4006024E4 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970302825DEF4006024E4 /* ProfilePresenter.swift */; };
@@ -41,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		14287F56A719B57ECBA11AC4 /* Pods_Peliculas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peliculas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		152D7A192832B6FC0041B61B /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		152D7A1B2832DE4D0041B61B /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		1571F6782822D7F500C4C171 /* Peliculas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peliculas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1571F67B2822D7F500C4C171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1571F67D2822D7F500C4C171 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +82,18 @@
 		1579C8C828244938005A2788 /* ExtensionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExtensionImageView.swift; path = Peliculas/PantallaPeliculas/ExtensionImageView.swift; sourceTree = SOURCE_ROOT; };
 		1579C8CB282454B7005A2788 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Peliculas/PantallaPeliculas/ServiceManager.swift; sourceTree = SOURCE_ROOT; };
 		1579C8CF2824857E005A2788 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesManager.swift; path = Peliculas/PantallaPeliculas/FavoritesManager.swift; sourceTree = SOURCE_ROOT; };
+		157EC0FC286236B200E369AF /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
+		157EC0FE286243D300E369AF /* AuthenticationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
+		157EC100286279CB00E369AF /* RCValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCValues.swift; sourceTree = "<group>"; };
+		157EC1032864D33B00E369AF /* TablaConversacionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablaConversacionesViewController.swift; sourceTree = "<group>"; };
+		157EC1042864D33B00E369AF /* TablaConversacionesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablaConversacionesViewController.xib; sourceTree = "<group>"; };
+		157EC1072864D37C00E369AF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		157EC1082864D37C00E369AF /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		157EC1162865052F00E369AF /* CeldaConversacionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaConversacionTableViewCell.swift; sourceTree = "<group>"; };
+		157EC1172865052F00E369AF /* CeldaConversacionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaConversacionTableViewCell.xib; sourceTree = "<group>"; };
+		157EC11A28650ADE00E369AF /* ModelChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelChat.swift; sourceTree = "<group>"; };
+		157EC11D2865174C00E369AF /* Fecha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fecha.swift; sourceTree = "<group>"; };
+		157EC11F28660BB600E369AF /* ModelConversacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConversacion.swift; sourceTree = "<group>"; };
 		15FBC278282486DB0057B862 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = Peliculas/PantallaPeliculas/HomePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3571A70B942CA24201CCBAF7 /* Pods-Peliculas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.release.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.release.xcconfig"; sourceTree = "<group>"; };
 		8D78529BCCA9998F467873A8 /* Pods-Peliculas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.debug.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +137,9 @@
 		1571F67A2822D7F500C4C171 /* Peliculas */ = {
 			isa = PBXGroup;
 			children = (
+				157EC11C2865173400E369AF /* fecha */,
+				157EC1022864D30A00E369AF /* RealTime */,
+				157EC0FB2862367B00E369AF /* RemoteConfig */,
 				1579C8CD28248542005A2788 /* ManagerFavoritos */,
 				1579C8CA28245489005A2788 /* Services */,
 				1579C8C72824491B005A2788 /* ExtensionPelicula */,
@@ -121,6 +152,7 @@
 				1571F67D2822D7F500C4C171 /* SceneDelegate.swift */,
 				1571F6A528234F3200C4C171 /* UserData.swift */,
 				1571F67F2822D7F500C4C171 /* ViewController.swift */,
+				152D7A1B2832DE4D0041B61B /* ViewControllerPresenter.swift */,
 				1571F6812822D7F500C4C171 /* Main.storyboard */,
 				1571F6842822D80000C4C171 /* Assets.xcassets */,
 				1571F6862822D80000C4C171 /* LaunchScreen.storyboard */,
@@ -147,6 +179,7 @@
 			children = (
 				1571F69C2823462A00C4C171 /* RegistrarseViewController.swift */,
 				1571F69D2823462A00C4C171 /* RegistrarseViewController.xib */,
+				152D7A192832B6FC0041B61B /* RegisterPresenter.swift */,
 			);
 			path = Registrarse;
 			sourceTree = "<group>";
@@ -221,6 +254,55 @@
 				1579C8CF2824857E005A2788 /* FavoritesManager.swift */,
 			);
 			path = ManagerFavoritos;
+			sourceTree = "<group>";
+		};
+		157EC0FB2862367B00E369AF /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				157EC100286279CB00E369AF /* RCValues.swift */,
+				157EC0FC286236B200E369AF /* RemoteConfig.swift */,
+				157EC0FE286243D300E369AF /* AuthenticationToken.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		157EC1022864D30A00E369AF /* RealTime */ = {
+			isa = PBXGroup;
+			children = (
+				157EC1102864DA1F00E369AF /* chat */,
+				157EC10B2864D9CF00E369AF /* celda */,
+				157EC1032864D33B00E369AF /* TablaConversacionesViewController.swift */,
+				157EC1042864D33B00E369AF /* TablaConversacionesViewController.xib */,
+				157EC11F28660BB600E369AF /* ModelConversacion.swift */,
+			);
+			path = RealTime;
+			sourceTree = "<group>";
+		};
+		157EC10B2864D9CF00E369AF /* celda */ = {
+			isa = PBXGroup;
+			children = (
+				157EC1162865052F00E369AF /* CeldaConversacionTableViewCell.swift */,
+				157EC1172865052F00E369AF /* CeldaConversacionTableViewCell.xib */,
+			);
+			path = celda;
+			sourceTree = "<group>";
+		};
+		157EC1102864DA1F00E369AF /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				157EC11A28650ADE00E369AF /* ModelChat.swift */,
+				157EC1072864D37C00E369AF /* ChatViewController.swift */,
+				157EC1082864D37C00E369AF /* ChatViewController.xib */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		157EC11C2865173400E369AF /* fecha */ = {
+			isa = PBXGroup;
+			children = (
+				157EC11D2865174C00E369AF /* Fecha.swift */,
+			);
+			path = fecha;
 			sourceTree = "<group>";
 		};
 		AEDF39001F925AD695ADA44A /* Pods */ = {
@@ -307,10 +389,13 @@
 				1571F6832822D7F500C4C171 /* Main.storyboard in Resources */,
 				1571F69F2823462A00C4C171 /* RegistrarseViewController.xib in Resources */,
 				9CC970372825E679006024E4 /* FavoritosTableViewCell.xib in Resources */,
+				157EC10A2864D37C00E369AF /* ChatViewController.xib in Resources */,
+				157EC1062864D33B00E369AF /* TablaConversacionesViewController.xib in Resources */,
 				1571F69528232ECD00C4C171 /* GoogleService-Info.plist in Resources */,
 				1571F6A428234D3B00C4C171 /* LogInViewController.xib in Resources */,
 				1579C8C628243D02005A2788 /* PerfilUsuarioViewController.xib in Resources */,
 				9CC970392825FC13006024E4 /* CeldaPeliculaCollectionViewCell.xib in Resources */,
+				157EC1192865052F00E369AF /* CeldaConversacionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,23 +449,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				1571F69E2823462A00C4C171 /* RegistrarseViewController.swift in Sources */,
+				157EC1182865052F00E369AF /* CeldaConversacionTableViewCell.swift in Sources */,
 				1579C8C528243D02005A2788 /* PerfilUsuarioViewController.swift in Sources */,
 				1579C8C028243A67005A2788 /* DetallesPeliculaViewController.swift in Sources */,
+				152D7A1C2832DE4D0041B61B /* ViewControllerPresenter.swift in Sources */,
 				15FBC279282486DB0057B862 /* HomePresenter.swift in Sources */,
 				1579C8D02824857E005A2788 /* FavoritesManager.swift in Sources */,
+				157EC12028660BB600E369AF /* ModelConversacion.swift in Sources */,
 				9CC970362825E679006024E4 /* FavoritosTableViewCell.swift in Sources */,
 				1579C8CC282454B7005A2788 /* ServiceManager.swift in Sources */,
+				157EC101286279CB00E369AF /* RCValues.swift in Sources */,
 				1571F6802822D7F500C4C171 /* ViewController.swift in Sources */,
 				1571F6A628234F3200C4C171 /* UserData.swift in Sources */,
 				1571F6A328234D3B00C4C171 /* LogInViewController.swift in Sources */,
 				9CC970312825DEF4006024E4 /* ProfilePresenter.swift in Sources */,
+				152D7A1A2832B6FC0041B61B /* RegisterPresenter.swift in Sources */,
+				157EC0FD286236B200E369AF /* RemoteConfig.swift in Sources */,
 				1579C8C928244938005A2788 /* ExtensionImageView.swift in Sources */,
 				9CC970332825E49C006024E4 /* LoginPresenter.swift in Sources */,
 				1579C8BC28243441005A2788 /* ModeloPelicula.swift in Sources */,
+				157EC1092864D37C00E369AF /* ChatViewController.swift in Sources */,
+				157EC11B28650ADE00E369AF /* ModelChat.swift in Sources */,
+				157EC11E2865174C00E369AF /* Fecha.swift in Sources */,
 				1571F67C2822D7F500C4C171 /* AppDelegate.swift in Sources */,
 				1571F69228232AAC00C4C171 /* PantallaPeliculasViewController.swift in Sources */,
+				157EC0FF286243D300E369AF /* AuthenticationToken.swift in Sources */,
 				1571F67E2822D7F500C4C171 /* SceneDelegate.swift in Sources */,
 				1579C8B828243244005A2788 /* CeldaPeliculaCollectionViewCell.swift in Sources */,
+				157EC1052864D33B00E369AF /* TablaConversacionesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,8 @@ protocol LoginView {
     func Login(success: Bool)
 }
 
-
-
 class LoginPresenter {
+    
     var view: LoginView?
     
     init(){
@@ -26,13 +25,16 @@ class LoginPresenter {
     }
     
     func login(email:String, pass:String){
-    
-        let userDefailt = UserDefaults.standard
-        userDefailt.set(email, forKey: "email")
         Auth.auth().signIn(withEmail: email, password: pass) { result, error in
             if let result = result, error == nil {
-            
                 self.view?.Login(success: true)
+                
+                //guardar datos en UserDefaults
+                let userDefailt = UserDefaults.standard
+                userDefailt.set(email, forKey: "email")
+                userDefailt.set(pass, forKey: "pass")
+                userDefailt.synchronize()
+                
             }else{
                 self.view?.Login(success: false)
             }

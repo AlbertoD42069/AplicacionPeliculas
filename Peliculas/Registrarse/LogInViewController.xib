@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pva-bg-03i">
-                    <rect key="frame" x="16" y="111" width="382" height="149.5"/>
+                    <rect key="frame" x="16" y="111" width="382" height="190.5"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oqu-BZ-WII">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
@@ -58,12 +58,20 @@
                             <color key="textColor" red="0.0012014835438829419" green="0.0012014835438829419" blue="0.0012014835438829419" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-yA-w2O">
+                            <rect key="frame" x="0.0" y="159.5" width="382" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Registrarse"/>
+                            <connections>
+                                <action selector="btnActionRegistro:" destination="-1" eventType="touchUpInside" id="955-p1-1DJ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="eUV-JS-K6b" secondAttribute="trailing" id="6it-IV-gQK"/>
                         <constraint firstItem="eUV-JS-K6b" firstAttribute="top" secondItem="JuZ-Kh-nWj" secondAttribute="bottom" constant="10" id="GGA-Fe-zMg"/>
+                        <constraint firstItem="Wdf-yA-w2O" firstAttribute="top" secondItem="eUV-JS-K6b" secondAttribute="bottom" constant="10" id="aib-rg-YHO"/>
                         <constraint firstItem="eUV-JS-K6b" firstAttribute="leading" secondItem="pva-bg-03i" secondAttribute="leading" id="j5y-E1-cUo"/>
-                        <constraint firstAttribute="bottom" secondItem="eUV-JS-K6b" secondAttribute="bottom" id="obZ-b6-qO3"/>
                     </constraints>
                 </stackView>
             </subviews>

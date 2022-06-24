@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrarseViewController" customModule="Peliculas" customModuleProvider="target">
             <connections>
                 <outlet property="btnRegister" destination="eg9-Ra-e4F" id="uAI-Vp-G2M"/>
+                <outlet property="lblTitulo" destination="r5P-vQ-SvA" id="Swe-iU-Y4x"/>
                 <outlet property="txtEdad" destination="OgE-gP-YII" id="zlH-Lw-nlF"/>
                 <outlet property="txtNombres" destination="ISb-kF-I1p" id="mYN-dh-Jor"/>
                 <outlet property="txtPassword" destination="Fg7-qI-Stg" id="m0G-U0-Lwa"/>
