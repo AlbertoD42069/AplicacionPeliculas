@@ -10,8 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TablaConversacionesViewController" customModule="Peliculas" customModuleProvider="target">
             <connections>
-                <outlet property="btnNuevaConversacion" destination="YTP-lv-fUu" id="cOL-DS-6z4"/>
-                <outlet property="lblTitulo" destination="AKK-DO-7jg" id="muV-yY-WJj"/>
                 <outlet property="tableConversaciones" destination="X0H-qw-L95" id="r11-W9-0Ww"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,37 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Khp-0I-FBP">
-                    <rect key="frame" x="0.0" y="44" width="414" height="31"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKK-DO-7jg">
-                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-lv-fUu">
-                            <rect key="frame" x="347" y="0.0" width="67" height="31"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                        </button>
-                    </subviews>
-                </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X0H-qw-L95">
-                    <rect key="frame" x="0.0" y="83" width="414" height="779"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Khp-0I-FBP" secondAttribute="trailing" id="4IY-1P-IrP"/>
-                <constraint firstItem="Khp-0I-FBP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rpa-FS-qBX"/>
-                <constraint firstItem="X0H-qw-L95" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VH9-KV-6sb"/>
-                <constraint firstItem="Khp-0I-FBP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="d9w-fj-ja3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="X0H-qw-L95" secondAttribute="bottom" id="kdA-97-Cdj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X0H-qw-L95" secondAttribute="trailing" id="qWY-7E-GYw"/>
-                <constraint firstItem="X0H-qw-L95" firstAttribute="top" secondItem="Khp-0I-FBP" secondAttribute="bottom" constant="8" symbolic="YES" id="vKh-KW-R2M"/>
+                <constraint firstItem="X0H-qw-L95" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NVN-Vg-KTC"/>
+                <constraint firstItem="X0H-qw-L95" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UFg-qf-pDB"/>
+                <constraint firstItem="X0H-qw-L95" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="aVw-r9-S6v"/>
+                <constraint firstItem="X0H-qw-L95" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lgm-oI-jiD"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </view>

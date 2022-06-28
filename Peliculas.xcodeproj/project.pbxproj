@@ -44,6 +44,8 @@
 		157EC11B28650ADE00E369AF /* ModelChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC11A28650ADE00E369AF /* ModelChat.swift */; };
 		157EC11E2865174C00E369AF /* Fecha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC11D2865174C00E369AF /* Fecha.swift */; };
 		157EC12028660BB600E369AF /* ModelConversacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC11F28660BB600E369AF /* ModelConversacion.swift */; };
+		157EC128286A3BA600E369AF /* ContactosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157EC126286A3BA600E369AF /* ContactosViewController.swift */; };
+		157EC129286A3BA600E369AF /* ContactosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157EC127286A3BA600E369AF /* ContactosViewController.xib */; };
 		15FBC279282486DB0057B862 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FBC278282486DB0057B862 /* HomePresenter.swift */; };
 		65E91744C2BB9E9088B32CC6 /* Pods_Peliculas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14287F56A719B57ECBA11AC4 /* Pods_Peliculas.framework */; };
 		9CC970312825DEF4006024E4 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC970302825DEF4006024E4 /* ProfilePresenter.swift */; };
@@ -94,6 +96,8 @@
 		157EC11A28650ADE00E369AF /* ModelChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelChat.swift; sourceTree = "<group>"; };
 		157EC11D2865174C00E369AF /* Fecha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fecha.swift; sourceTree = "<group>"; };
 		157EC11F28660BB600E369AF /* ModelConversacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConversacion.swift; sourceTree = "<group>"; };
+		157EC126286A3BA600E369AF /* ContactosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosViewController.swift; sourceTree = "<group>"; };
+		157EC127286A3BA600E369AF /* ContactosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactosViewController.xib; sourceTree = "<group>"; };
 		15FBC278282486DB0057B862 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = Peliculas/PantallaPeliculas/HomePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3571A70B942CA24201CCBAF7 /* Pods-Peliculas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.release.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.release.xcconfig"; sourceTree = "<group>"; };
 		8D78529BCCA9998F467873A8 /* Pods-Peliculas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.debug.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 		157EC1022864D30A00E369AF /* RealTime */ = {
 			isa = PBXGroup;
 			children = (
+				157EC121286A3B1900E369AF /* contactos */,
 				157EC1102864DA1F00E369AF /* chat */,
 				157EC10B2864D9CF00E369AF /* celda */,
 				157EC1032864D33B00E369AF /* TablaConversacionesViewController.swift */,
@@ -303,6 +308,15 @@
 				157EC11D2865174C00E369AF /* Fecha.swift */,
 			);
 			path = fecha;
+			sourceTree = "<group>";
+		};
+		157EC121286A3B1900E369AF /* contactos */ = {
+			isa = PBXGroup;
+			children = (
+				157EC126286A3BA600E369AF /* ContactosViewController.swift */,
+				157EC127286A3BA600E369AF /* ContactosViewController.xib */,
+			);
+			path = contactos;
 			sourceTree = "<group>";
 		};
 		AEDF39001F925AD695ADA44A /* Pods */ = {
@@ -389,6 +403,7 @@
 				1571F6832822D7F500C4C171 /* Main.storyboard in Resources */,
 				1571F69F2823462A00C4C171 /* RegistrarseViewController.xib in Resources */,
 				9CC970372825E679006024E4 /* FavoritosTableViewCell.xib in Resources */,
+				157EC129286A3BA600E369AF /* ContactosViewController.xib in Resources */,
 				157EC10A2864D37C00E369AF /* ChatViewController.xib in Resources */,
 				157EC1062864D33B00E369AF /* TablaConversacionesViewController.xib in Resources */,
 				1571F69528232ECD00C4C171 /* GoogleService-Info.plist in Resources */,
@@ -461,6 +476,7 @@
 				157EC101286279CB00E369AF /* RCValues.swift in Sources */,
 				1571F6802822D7F500C4C171 /* ViewController.swift in Sources */,
 				1571F6A628234F3200C4C171 /* UserData.swift in Sources */,
+				157EC128286A3BA600E369AF /* ContactosViewController.swift in Sources */,
 				1571F6A328234D3B00C4C171 /* LogInViewController.swift in Sources */,
 				9CC970312825DEF4006024E4 /* ProfilePresenter.swift in Sources */,
 				152D7A1A2832B6FC0041B61B /* RegisterPresenter.swift in Sources */,

@@ -17,17 +17,12 @@ import MessageKit
 class TablaConversacionesViewController: UIViewController {
     
     let sppiner  = JGProgressHUD()
-    
-    @IBOutlet weak var btnNuevaConversacion: UIButton!
-    @IBOutlet weak var lblTitulo: UILabel!
+    var contacto: [String] = ["JUAN", "PEDRO", "LUCAS", "MATEO", "JOSE"]
     @IBOutlet weak var tableConversaciones: UITableView!
-    var titulo = "conversaciones"
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblTitulo.text = "Conversaciones"
-        lblTitulo.textAlignment = .center
-        lblTitulo.font = UIFont.preferredFont(forTextStyle: .title1)
-        //self.navigationController?.setNavigationBarHidden(true, animated: false)
+        title = "conversaciones"
+        navigationItem.backButtonTitle = "Back"
         delegate()
         presentarCelda()
 
@@ -39,14 +34,15 @@ class TablaConversacionesViewController: UIViewController {
 
 }
 
+
 extension TablaConversacionesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        contacto.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableConversaciones.dequeueReusableCell(withIdentifier: "celda", for: indexPath) as! CeldaConversacionTableViewCell
-        celda.lblConversacion.text = "conversacion"
+        celda.lblConversacion.text = contacto[indexPath.row]
         
         return celda
     }
@@ -60,8 +56,9 @@ extension TablaConversacionesViewController: UITableViewDataSource, UITableViewD
         tableConversaciones.register(celdaChat, forCellReuseIdentifier: "celda")
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chatVC = ChatViewController()
-        chatVC.title = "Persona"
+        let chatVC = ChatViewController(con: " ", ID: " ")
+        chatVC.title = contacto[indexPath.row]
+        chatVC.isNewConvesation = true
         navigationController?.pushViewController(chatVC, animated: true)
         }
     

@@ -79,6 +79,8 @@ class RegistrarseViewController: UIViewController, RegisterView {
             
             presenter?.register(nombre: nombre, edad: edad, userName: email, pass: contraseña)
             
+            
+            
         } else {
 
         }

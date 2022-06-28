@@ -32,14 +32,22 @@ class RegisterPresenter {
         Auth.auth().createUser(withEmail: userName, password: pass) { result, error in
             self.view?.Register(success: true)
             if let result = result, error == nil {
-                //var userNameModif = userName.replacingOccurrences(of: ".", with: "-")
-                  //  userNameModif = userName.replacingOccurrences(of: "@", with: "-")
-                self.ref.child("userName").setValue([
+                var userNameModif: String {
+                var userNameModif = userName.replacingOccurrences(of: ".", with: "-")
+                    userNameModif = userNameModif.replacingOccurrences(of: "@", with: "-")
+                    return userNameModif
+                }
+                self.ref.child(userNameModif).setValue([
                     "Nombres": nombre ,
                     "Edad": edad,
-                    "correo": userName
+                    "correo": userNameModif
                 ])
-                
+                self.ref.child(userNameModif).observeSingleEvent(of: .value) { snapshot in
+                    
+                    guard snapshot.value as? String != nil else {
+                        return
+                    }
+                }
                 /*self.db.collection("usuario").document(userName).setData([
                     "Nombres": nombre ?? "",
                     "Edad": edad ?? ""], merge: true)*/
@@ -49,23 +57,18 @@ class RegisterPresenter {
                 userDefailt.set(pass, forKey: "pass")
                 userDefailt.synchronize()
                 
-                self.ref.child("userName").observeSingleEvent(of: .value) { snapshot in
-                    
-                    guard snapshot.value as? String != nil else {
-                        return
-                    }
-                }
-            }else{
+               
+        }else {
                 self.view?.Register(success: true)
             }
         }
         
     }
-    
+    /*
     func userExists(con userName: String, completion: @escaping ((Bool) -> Void) ){
        // var userNameModif = userName.replacingOccurrences(of: ".", with: "-")
          //   userNameModif = userName.replacingOccurrences(of: "@", with: "-")
-        ref.child("userName").observeSingleEvent(of: .value) { snapshot in
+        ref.child(userName).observeSingleEvent(of: .value) { snapshot in
             
             guard snapshot.value as? String != nil else {
                 completion(false)
@@ -75,4 +78,5 @@ class RegisterPresenter {
         completion(true)
         
     }
+     */
 }
