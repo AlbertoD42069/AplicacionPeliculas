@@ -9,7 +9,8 @@ import UIKit
 
 class CeldaConversacionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblConversacion: UILabel!
+    @IBOutlet weak var lblTexto: UILabel!
+    @IBOutlet weak var lblContacto: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +21,10 @@ class CeldaConversacionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    public func configure(with mode: Conversacion) {
+        self.lblContacto.text = "hello"
+        //self.lblContacto.text = mode.id
+        //self.lblTexto.text = mode.latestMenssaage.text
+        self.lblTexto.text = "nil"
+    }
 }

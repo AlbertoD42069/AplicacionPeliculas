@@ -33,6 +33,7 @@ class LoginPresenter {
                 let userDefailt = UserDefaults.standard
                 userDefailt.set(email, forKey: "email")
                 userDefailt.set(pass, forKey: "pass")
+                
                 userDefailt.synchronize()
                 
             }else{

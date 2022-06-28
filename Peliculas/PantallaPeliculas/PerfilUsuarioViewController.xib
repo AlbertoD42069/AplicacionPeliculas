@@ -14,7 +14,6 @@
                 <outlet property="lblCorreoElectronico" destination="xa8-3K-omo" id="EzS-2p-6D0"/>
                 <outlet property="lblEdadUsuario" destination="pBd-HN-oRP" id="4jP-gV-co1"/>
                 <outlet property="lblNombreUsuario" destination="627-Cl-oWB" id="3Tf-Wp-EdN"/>
-                <outlet property="lblTestAB" destination="ukD-IH-lne" id="BIW-ov-yg1"/>
                 <outlet property="tablaFavoritos" destination="46w-8O-k7S" id="Hlo-YQ-t1D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -60,12 +59,14 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukD-IH-lne" userLabel="test">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvg-fJ-Tjf">
                                     <rect key="frame" x="0.0" y="96" width="191" height="32"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                    <connections>
+                                        <action selector="btnAcctionChat:" destination="-1" eventType="touchUpInside" id="ENr-gj-crO"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="xa8-3K-omo" firstAttribute="leading" secondItem="1QU-VB-4Vj" secondAttribute="leading" id="Cbl-un-txT"/>

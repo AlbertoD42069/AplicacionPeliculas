@@ -15,7 +15,6 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
     @IBOutlet weak var tablaFavoritos: UITableView!
 
     
-    @IBOutlet weak var lblTestAB: UILabel!
     
     func updateFavorites(_ data: [FavoriteItem]) {
         self.favorites = data
@@ -23,6 +22,7 @@ class PerfilUsuarioViewController: UIViewController, ProfileView{
     }
     
 
+    
     var favorites: [FavoriteItem] = []
     var presenter: ProfilePresenter?
     @IBOutlet weak var lblCorreoElectronico: UILabel!
@@ -95,4 +95,11 @@ extension PerfilUsuarioViewController: FavoriteCellDelegate {
     }
     
     
+}
+
+extension PerfilUsuarioViewController {
+    @IBAction func btnAcctionChat(_ sender: Any) {
+        let vc = ChatViewController(con: lblNombreUsuario.text ?? " ", tambien: "\(lblNombreUsuario.text ?? " ") De la Tierra")
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -13,7 +13,9 @@ import MessageKit
 import InputBarAccessoryView
 import FirebaseDatabase
 import AVFoundation
-
+/*struct Apellido {
+    var apellido = "De la Tierra"
+}*/
 
 class ChatViewController: MessagesViewController {
     
@@ -27,20 +29,23 @@ class ChatViewController: MessagesViewController {
     
     
     var messages = [Message]()
+    //var apellido = [Apellido]()
     var selfSender: Sender? {
         guard let email = UserDefaults.standard.value(forKey: "email") as? String else { return nil }
         return Sender(senderId: email, displayName: " ")
     }
     var isNewConvesation = false
     var ref = Database.database().reference()
-    let otroUsuarioEmail : String
-    var conversationId : String?
-    init(con email: String, ID: String?){
+    
+    public let otroUsuarioEmail : String
+    private var conversationId : String?
+    
+    init(con email: String, tambien Id: String?){
         self.otroUsuarioEmail = email
-        self.conversationId = ID
+        self.conversationId = Id
         super.init(nibName: nil, bundle: nil)
     }
-    required init?(coder: NSCoder) {
+    required init?(coder: NSCoder?) {
         fatalError("init(coder:) has not bee implement")
     }
     
@@ -72,7 +77,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate{
         //isNewConvesation = true
         if isNewConvesation {
             let mensaje = Message(sender: selfSender, messageId: mensajeID, sentDate: Date(), kind: .text(text))
-            crearNuevaConversacion(with: otroUsuarioEmail, firstMenssage: mensaje, completion: {[weak self] success in
+            crearNuevaConversacion(with: otroUsuarioEmail, name: self.title ?? "user" , firstMenssage: mensaje, completion: {[weak self] success in
                 if success {
                     
                     print("mensaje enviado")
@@ -85,7 +90,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate{
         }
         
     }
-    func finalizarCreacionConversacion(with conversacionId: String, firstMessage: Message, completion: @escaping(Bool) -> Void) {
+    func finalizarCreacionConversacion(with conversacionId: String, firstMessage: Message, name:String, completion: @escaping(Bool) -> Void) {
         let messageDate = firstMessage.sentDate
         let dateString = ChatViewController.fecha.string(from: messageDate)
         var menssage = ""
@@ -107,7 +112,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate{
             "content": menssage ,
             "date":  dateString ,
             "sender_email": currentUserEmail ,
-            "is_read": false
+            "is_read": false,
+            "name": name
         ]
         let value: [String: Any] = [
             "menssage": [
@@ -140,7 +146,7 @@ extension ChatViewController {
     //mensaje en base de datos
     
     //crear nueva conversacion
-    func crearNuevaConversacion(with otroUsuarioEmail : String, firstMenssage: Message, completion: @escaping(Bool) -> Void) {
+    func crearNuevaConversacion(with otroUsuarioEmail : String, name: String, firstMenssage: Message, completion: @escaping(Bool) -> Void) {
         guard let currentEmail = UserDefaults.standard.value(forKey: "email") as? String  else {
             return
         }
@@ -169,7 +175,8 @@ extension ChatViewController {
                 "lastest_message": [
                     "date":dateString,
                     "menssage": menssage,
-                    "is_read": false
+                    "is_read": false,
+                    "name": name
                 ]
             ]
             if var conversacion = userNode["conversacion"] as? [[String: Any]]{
@@ -179,7 +186,7 @@ extension ChatViewController {
                     guard error == nil else {
                        return
                     }
-                    self?.finalizarCreacionConversacion(with: conversacionId, firstMessage: firstMenssage, completion: completion)
+                    self?.finalizarCreacionConversacion(with: conversacionId, firstMessage: firstMenssage, name: name, completion: completion)
                 })
                 
             }else {
@@ -191,15 +198,15 @@ extension ChatViewController {
                         completion(false)
                         return
                     }
-                    self?.finalizarCreacionConversacion(with: conversacionId, firstMessage: firstMenssage, completion: completion)
+                    self?.finalizarCreacionConversacion(with: conversacionId, firstMessage: firstMenssage, name: name, completion: completion)
                 })
             }
         })
     }
     // buscar y regresar conversacion para un usuario con password y email
-    func getAllConversation(for email: String, completion: @escaping (Result<String,Error>) -> Void){
-        
-    }
+    //func getAllConversation(for email: String, completion: @escaping (Result<String,Error>) -> Void){
+    //
+    //}
     func getAllMessageForConversation(with id: String, completion: @escaping (Result<String,Error>) -> Void) {
         
     }

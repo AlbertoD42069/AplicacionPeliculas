@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 struct Conversation {
     let id: String
     let name: String
@@ -19,3 +19,4 @@ struct  LatestMessage {
     let text: String
     let isRead: Bool
 }
+*/
